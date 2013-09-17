@@ -3,7 +3,7 @@ def levenshtein_distance(a, b):
 
     Keyword argument(s):
     a - First string
-    b - Seconds string
+    b - Second string
     """
 
     if a == b:
@@ -27,12 +27,12 @@ def levenshtein_distance(a, b):
                levenshtein_distance(a[:-1], b[:-1]) + cost)
 
 
-def levenshtein_itr(a, b):
+def levenshtein_itr(a, b):  # This is broken for now
     """Returns the Levenshtein distance between two strings.
 
     Keyword argument(s):
     a - First string
-    b - Seconds string
+    b - Second string
     """
 
     mat = {}
