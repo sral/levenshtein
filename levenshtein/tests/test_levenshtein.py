@@ -1,6 +1,6 @@
 import unittest
 
-from levenshtein import levenshtein_distance
+from levenshtein import levenshtein_distance, levenshtein_distance_recursive
 
 
 class TestKnownDistances(unittest.TestCase):
@@ -13,8 +13,15 @@ class TestKnownDistances(unittest.TestCase):
                        ("circle", "square", 5),
                        ("pig", "eye", 3))
 
-    def test_known_distances(self):
-        """Test using known distances"""
+    def test_known_distances_recursive(self):
+        """Test iterative algorithm using known distances"""
+
+        for word, target, distance in self.known_distances:
+            self.assertEqual(levenshtein_distance_recursive(word, target),
+                             distance)
+
+    def test_known_distances_iterative(self):
+        """Test iterative algorithm using known distances"""
 
         for word, target, distance in self.known_distances:
             self.assertEqual(levenshtein_distance(word, target), distance)

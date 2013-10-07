@@ -1,1 +1,1 @@
-from levenshtein import levenshtein_distance
+from levenshtein import levenshtein_distance, levenshtein_distance_recursive
